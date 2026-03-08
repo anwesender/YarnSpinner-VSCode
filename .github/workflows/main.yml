@@ -62,16 +62,6 @@ jobs:
               with:
                   dotnet-version: 9.0.x
 
-            - name: Clean install dependencies
-              run: npm ci && npm --prefix graph-view ci
-
-            - name: Run unit tests
-              run: npm test
-
-            - name: Get version
-              id: version
-              run: ./get-version.sh
-          
             - name: Build custom @yarnspinnertool/core
               run: |
                   cd YarnSpinner-TypeScript
@@ -81,7 +71,15 @@ jobs:
             - name: Install dependencies
               run: |
                   npm install
+                  npm --prefix webviews install
 
+            - name: Run unit tests
+              run: npm test
+            
+            - name: Get version
+              id: version
+              run: ./get-version.sh
+            
             - name: Update metadata in package.json
               uses: onlyutkarsh/patch-files-action@v1.0.1
               with:
