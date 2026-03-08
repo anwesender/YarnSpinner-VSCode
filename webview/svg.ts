@@ -38,7 +38,7 @@ export function getLinesSVGForNodes(
         ey: number,
         ae: number,
         as: number,
-        type: "Jump" | "Detour",
+        type: "Jump" | "Detour" | "Next",
     ];
 
     let arrowDescriptors: ArrowDescriptor[] = [];
@@ -145,17 +145,27 @@ export function getLinesSVGForNodes(
             "d",
             `M ${sx} ${sy} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${ex} ${ey}`,
         );
-        line.setAttribute("stroke", color);
+        const isNext = type === "Next";
+        const edgeColor = isNext ? "#a020f0" : color;
+
+        line.setAttribute("stroke", edgeColor);
         line.setAttribute("stroke-width", lineThickness.toString());
         line.setAttribute("fill", "none");
+        if (isNext) {
+            line.setAttribute("stroke-dasharray", "5,5");
+        }
 
         svg.appendChild(line);
 
-        svg.appendChild(getArrowHead("arrow-end", ex, ey, ae));
+        const endHead = getArrowHead("arrow-end", ex, ey, ae);
+        endHead.setAttribute("fill", edgeColor);
+        svg.appendChild(endHead);
 
         if (type === "Detour") {
             // Show an arrow head at the start for detours
-            svg.appendChild(getArrowHead("arrow-start", sx, sy, as));
+            const startHead = getArrowHead("arrow-start", sx, sy, as);
+            startHead.setAttribute("fill", edgeColor);
+            svg.appendChild(startHead);
         }
     }
 

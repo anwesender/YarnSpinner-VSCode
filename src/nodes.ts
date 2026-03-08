@@ -27,7 +27,7 @@ export interface NodeHeader {
 
 export interface NodeJump {
     destinationTitle: string;
-    type: "Jump" | "Detour";
+    type: "Jump" | "Detour" | "Next";
     destinationFileUri: string;
 }
 

@@ -190,7 +190,7 @@ export const useYarn = create<Store>()(
                 }));
             };
             vm.lineCallback = (line, signal) =>
-                new Promise((resolve) => {
+                new Promise<void>((resolve) => {
                     console.log("Run line", line);
                     signal.onabort = () => resolve();
 
