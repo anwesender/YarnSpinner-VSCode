@@ -21,7 +21,6 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
-node_modeuls/**
 samples/**
 dist/extension.js.map
 test/**
@@ -39,11 +38,9 @@ eslint.config.mjs
 scripts/**
 test-results/**
 packages/**
-CLAUDE.md
 CONTRIBUTION.md
 pnpm-workspace.yaml
 
 YarnSpinner/
 YarnSpinner-TypeScript/
 YarnSpinner-LanguageServer/
-webviews/node_modules/
