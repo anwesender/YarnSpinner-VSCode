@@ -9,7 +9,7 @@
     "sponsor": {
         "url": "https://patreon.com/secretlab"
     },
-    "languageServerVersion": "main",
+    "languageServerVersion": "aa22bf0134668685abd9e73da68dd0f0107f14b7",
     "keywords": [
         "yarnspinner",
         "narrative",
