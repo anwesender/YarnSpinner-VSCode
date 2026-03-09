@@ -10,3 +10,5 @@ LanguageServer/**
 art-source
 .gitmodules
 .prettierignore
+
+webviews/node_modules/**

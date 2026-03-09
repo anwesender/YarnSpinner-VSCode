@@ -3,7 +3,7 @@ import { NodeInfo } from "./nodes";
 import { Position, Size, getPositionFromNodeInfo } from "./util";
 
 type OutgoingConnection = {
-    connectionType: "Jump" | "Detour";
+    connectionType: "Jump" | "Detour" | "Next";
 } & (
     | {
           destinationType: "Node";

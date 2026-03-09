@@ -190,7 +190,7 @@ export const useYarn = create<Store>()(
                 }));
             };
             vm.lineCallback = (line, signal) =>
-                new Promise((resolve) => {
+                new Promise<void>((resolve) => {
                     console.log("Run line", line);
                     signal.onabort = () => resolve();
 
@@ -228,7 +228,7 @@ export const useYarn = create<Store>()(
 
             vm.optionCallback = (options, signal) => {
                 console.log("Run options", options);
-                return new Promise((resolve) => {
+                return new Promise<number>((resolve) => {
                     signal.onabort = () => resolve(-1);
 
                     set({

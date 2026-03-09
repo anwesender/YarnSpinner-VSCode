@@ -108,3 +108,5 @@ declare module "react" {
         }
     }
 }
+
+declare module "@yarnspinnertool/core";
