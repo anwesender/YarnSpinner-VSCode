@@ -11,4 +11,6 @@ art-source
 .gitmodules
 .prettierignore
 
-webviews/node_modules/**
+YarnSpinner/
+YarnSpinner-TypeScript/
+YarnSpinner-LanguageServer/
